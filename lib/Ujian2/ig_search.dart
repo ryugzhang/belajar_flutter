@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -28,15 +29,15 @@ class _IGSearchState extends State<IGSearch> {
                 width: 340,
                 child: TextField(
                   decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey.shade300,
-                    isDense: true,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(width: 0, style: BorderStyle.none)
-                    ),
-                    hintText: "Search",
+                      filled: true,
+                      fillColor: Colors.grey.shade300,
+                      isDense: true,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(width: 0, style: BorderStyle.none)
+                      ),
+                      hintText: "Search"
                   ),
                   style: TextStyle(fontSize: 14),
                 ),
@@ -52,31 +53,62 @@ class _IGSearchState extends State<IGSearch> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Recent", style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),),
-              Text("See all", style: TextStyle(color: Colors.blueAccent),),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16
+              )),
+              Text("See all", style: TextStyle(color: Colors.blueAccent)),
             ],
           ),
         ),
-        
-        Row(
-          children: [
-            Container(
-              width: 65,
-              height: 65,
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100)
-              ),
-              child: Image.network(urlPanda, 
-              fit: BoxFit.cover,),
-            ),
-            SizedBox(width: 10,),
-          ],
-        ),
 
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
+        itemSearch("Fernanda", "Putra Fernanda"),
       ],
+    );
+  }
+
+  Padding itemSearch(String username, String caption){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+      child: Row(
+        children: [
+          Container(
+            width: 65,
+            height: 65,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100)
+            ),
+            child: Image.network(urlPanda,
+              fit: BoxFit.cover,),
+          ),
+          SizedBox(width: 10,),
+          Container(
+            width: 270,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(username, style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16
+                ),),
+                SizedBox(height: 7,),
+                Text(caption, style: TextStyle(
+                  color: Colors.grey,
+                ),),
+              ],
+            ),
+          ),
+          Icon(MdiIcons.close, color: Colors.grey, size: 17,),
+        ],
+      ),
     );
   }
 }

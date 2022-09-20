@@ -1,5 +1,7 @@
+import 'package:belajar/Ujian2/ig_akun.dart';
 import 'package:belajar/Ujian2/ig_awal.dart';
 import 'package:belajar/Ujian2/ig_search.dart';
+import 'package:belajar/Ujian2/ig_shop.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -17,8 +19,8 @@ class _IGHomeState extends State<IGHome> {
     IGAwal(),
     IGSearch(),
     Center(child: Text("Reels Skip"),),
-    Text("Halaman 4"),
-    Text("Halaman 5"),
+    IGShop(),
+    IGAkun(),
   ];
 
   int nomor_halaman = 0;
@@ -77,7 +79,7 @@ class _IGHomeState extends State<IGHome> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      nomor_halaman= 0;
+                      nomor_halaman= 2;
                     });
                   },
                   child: Column(
@@ -91,7 +93,7 @@ class _IGHomeState extends State<IGHome> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      nomor_halaman= 0;
+                      nomor_halaman= 3;
                     });
                   },
                   child: Column(
@@ -106,7 +108,7 @@ class _IGHomeState extends State<IGHome> {
                 GestureDetector(
                   onTap: (){
                     setState(() {
-                      nomor_halaman= 0;
+                      nomor_halaman= 4;
                     });
                   },
                   child: Column(
