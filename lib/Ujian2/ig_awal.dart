@@ -9,9 +9,6 @@ class IGAwal extends StatefulWidget {
 }
 
 class _IGAwalState extends State<IGAwal> {
-  String urlPanda = "https://www.meme-arsenal.com/memes/90110b69ea4453451de87702ba449231.jpg";
-  List<String> nama = ["Ceng Jelek", "Gocenk Jelek", "Iceng Jelek"];
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,7 +49,6 @@ class _IGAwalState extends State<IGAwal> {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              fotoKecil(urlPanda, nama[0]),
               fotoKecil(urlPanda, nama[1]),
               fotoKecil(urlPanda, nama[2]),
               fotoKecil(urlPanda, nama[0]),
